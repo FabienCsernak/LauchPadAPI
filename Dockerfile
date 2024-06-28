@@ -1,5 +1,8 @@
 FROM php:8.3-fpm
 
+ARG user
+ARG uid
+
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
@@ -26,15 +29,8 @@ WORKDIR /var/www
 COPY . /var/www
 
 # Copy existing application directory permissions
-COPY --chown=www-data:www-data . /var/www
+RUN chown -R $uid:$uid /var/www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-
-# Copy initialization script
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
-# Run initialization script
-ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["php-fpm"]

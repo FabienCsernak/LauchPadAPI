@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('mission_data', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('agency_id');
-            $table->foreign('agency_id')->references('id')->on('agencies');
+            $table->unsignedBigInteger('launcher_id');
+            $table->foreign('launcher_id')->references('id')->on('launchers');
             $table->integer('count_mission');
             $table->integer('mission_succes');
-            $table->integer('mission_faillure');
-            $table->integer('mission_partial_faillure');
+            $table->integer('mission_failure');
+            $table->integer('mission_partial_failure');
             $table->timestamps();
         });
     }

@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('description', 255)->nullable()->comment('Description of the launcher');
             $table->boolean('status')->default(true)->comment('Status of the launcher (active or not)');
             $table->unsignedBigInteger('price')->nullable()->comment('Price of the launcher');
-            $table->integer('diameter')->comment('Diameter of the launcher');
-            $table->integer('height')->comment('Height of the launcher');
-            $table->integer('LEO')->comment('LEO of the launcher');
-            $table->integer('GTO')->comment('GTO of the launcher');
-            $table->integer('stage')->comment('Number of stages');
-            $table->integer('liftoff_thrust')->comment('Liftoff thrust of the launcher');
+            $table->integer('diameter')->nullable()->comment('Diameter of the launcher');
+            $table->integer('height')->nullable()->comment('Height of the launcher');
+            $table->integer('LEO')->nullable()->comment('LEO of the launcher');
+            $table->integer('GTO')->nullable()->comment('GTO of the launcher');
+            $table->integer('stage')->nullable()->comment('Number of stages');
+            $table->integer('liftoff_thrust')->nullable()->comment('Liftoff thrust of the launcher');
         });
     }
 

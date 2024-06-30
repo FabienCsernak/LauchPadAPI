@@ -21,4 +21,9 @@ class Launcher extends Model
     public function agency() {
         return $this->belongsTo(Agencies::class, 'agency_name', 'name');
     }
+
+    public function type()
+    {
+        return $this->belongsTo(LauncherType::class);
+    }
 }

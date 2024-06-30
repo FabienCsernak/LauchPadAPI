@@ -11,5 +11,5 @@ class MissionData extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['agency_id', 'count_mission', 'mission_succes', 'mission_faillure', 'mission_partial_faillure'];
+    protected $fillable = ['agency_id', 'count_mission', 'mission_success', 'mission_faillure', 'mission_partial_faillure'];
 }

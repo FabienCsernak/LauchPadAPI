@@ -18,4 +18,9 @@ class Agencies extends Model
     {
         return $this->belongsTo(Agencies::class, 'name', 'agency_name');
     }
+
+    public function launchers()
+    {
+        return $this->hasMany(Launcher::class);
+    }
 }

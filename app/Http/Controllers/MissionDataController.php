@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MissionData;
 use Illuminate\Http\Request;
 
 class MissionDataController extends Controller

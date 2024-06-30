@@ -16,10 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('launcher_id');
             $table->foreign('launcher_id')->references('id')->on('launchers');
             $table->integer('count_mission');
-            $table->integer('mission_succes');
+            $table->integer('mission_success');
             $table->integer('mission_failure');
             $table->integer('mission_partial_failure');
-            $table->timestamps();
         });
     }
 
